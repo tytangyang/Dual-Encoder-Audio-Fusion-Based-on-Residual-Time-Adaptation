@@ -2,8 +2,6 @@
 
 **Dual-Encoder Audio Fusion Based on Residual Time Adaptation**
 
-**Yang Tang · Hongqing Liu · Liming Shi · Lu Gan**
-
 Submission to the **Interspeech 2026 Audio Encoder Capacity Challenge (AECC)**.
 
 [![Report](https://img.shields.io/badge/Technical%20Report-PDF-red)](docs/technical-report.pdf)
