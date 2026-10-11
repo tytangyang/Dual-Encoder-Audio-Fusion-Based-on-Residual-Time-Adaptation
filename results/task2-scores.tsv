@@ -1,0 +1,7 @@
+Task	score	weight
+eval_aishell-1	0.236	1
+eval_clotho	0.422	1
+eval_librispeech	0.302	1
+eval_mecat	0.569	1
+eval_songdescriber	0.477	1
+Overall	0.401	5
