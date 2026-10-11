@@ -1,0 +1,16 @@
+braceexpand==0.1.7
+einops==0.8.2
+huggingface_hub==0.35.1
+jiwer==4.0.0
+loguru==0.7.3
+mecat==1.1.0
+numpy==2.4.2
+pandas==3.0.0
+peft==0.18.1
+PyYAML==6.0.3
+Requests==2.32.5
+scikit_learn==1.8.0
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124
+transformers==4.56.2
+webdataset==1.0.2
