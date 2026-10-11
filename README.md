@@ -73,7 +73,32 @@ encoder/
 │   └── task2-scores.tsv                # Original submitted Task 2 score table
 └── README.md
 ```
+### Competition Submission Archive
 
+The separately supplied `echobridge.zip` contains:
+
+```text
+echobridge/
+├── example/
+│   ├── echobridge/                     # Tuple-returning competition encoder + models/
+│   └── echobridgeAPI/                  # Tensor-returning competition encoder + models/
+├── experiments/
+│   ├── Task1/echobridge/
+│   │   ├── checkpoint-100000/
+│   │   ├── predictions_eval_*.csv
+│   │   ├── score_eval_*.yaml
+│   │   └── scores.tsv
+│   └── Task2/echobridge/
+│       ├── checkpoint-50000/
+│       ├── predictions_eval_*.csv
+│       ├── score_eval_*.yaml
+│       └── scores.tsv
+├── Interspeech2026_Audio_Encoder_Challenge.pdf
+├── requirements.txt
+└── Readme.md
+```
+
+The archive contains submission artifacts; the complete source project supplies the XARES-LLM harness. Large checkpoints, prediction files, and the submission encoder directories are not duplicated by this documentation package.
 ## Getting Started
 
 ### 1. Environment
