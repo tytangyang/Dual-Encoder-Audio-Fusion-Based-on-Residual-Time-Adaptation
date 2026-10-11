@@ -29,28 +29,6 @@ The competition system aligns the two feature sequences, projects them into a sh
 
 The submitted local evaluations report an **unweighted average score of 0.712 on Task 1** and **0.401 on Task 2**, covering **20 datasets**. On Task 1, the reported score exceeds CED-mini by **0.114** and Whisper by **0.062** in absolute score units. These are local evaluation results, not official leaderboard placements.
 
-### System Architecture
-
-```mermaid
-flowchart TD
-    A[Audio waveform] --> W[Whisper-base]
-    A --> C[CED-mini]
-    W --> WP[Whisper feature projection]
-    C --> TA[Temporal alignment to Whisper length]
-    TA --> CP[CED feature projection]
-    WP --> F[Concatenation and linear fusion]
-    CP --> F
-    F --> M[Multi-scale temporal adapter: kernels 3 and 7]
-    M --> G[Channel gate and residual scaling]
-    F --> R[Residual addition]
-    G --> R
-    R --> P[XARES-LLM audio projector]
-    P --> L[SmolLM2-135M with LoRA]
-    L --> O[Classification / Transcription / Captioning]
-```
-
-*This diagram describes the report/submission architecture. The root encoder is a separate MLP-adapter implementation; the versions are distinguished below.*
-
 ### Encoder Versions
 
 | Version | Class | Adapter | Return value |
@@ -95,33 +73,6 @@ encoder/
 │   └── task2-scores.tsv                # Original submitted Task 2 score table
 └── README.md
 ```
-
-### Competition Submission Archive
-
-The separately supplied `echobridge.zip` contains:
-
-```text
-echobridge/
-├── example/
-│   ├── echobridge/                     # Tuple-returning competition encoder + models/
-│   └── echobridgeAPI/                  # Tensor-returning competition encoder + models/
-├── experiments/
-│   ├── Task1/echobridge/
-│   │   ├── checkpoint-100000/
-│   │   ├── predictions_eval_*.csv
-│   │   ├── score_eval_*.yaml
-│   │   └── scores.tsv
-│   └── Task2/echobridge/
-│       ├── checkpoint-50000/
-│       ├── predictions_eval_*.csv
-│       ├── score_eval_*.yaml
-│       └── scores.tsv
-├── Interspeech2026_Audio_Encoder_Challenge.pdf
-├── requirements.txt
-└── Readme.md
-```
-
-The archive contains submission artifacts; the complete source project supplies the XARES-LLM harness. Large checkpoints, prediction files, and the submission encoder directories are not duplicated by this documentation package.
 
 ## Getting Started
 
